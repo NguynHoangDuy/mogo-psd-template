@@ -1,0 +1,91 @@
+.wedo{
+    padding:11rem 0;
+    &-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-img, &-content{
+        width: calc(50% - 3rem);
+    }
+    &-img{
+        object-fit: cover;
+    }
+    
+    &-item{
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+        
+        &-header{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1.5rem;
+            border: 1px solid $gray-dark-color;
+            cursor: pointer;
+        }
+        &-icon{
+            margin-right: 1.5rem;
+        }
+        &-title{
+            text-transform: uppercase;
+            font-weight: 500;
+            @include textClam;
+        }
+        &-arrow{
+            margin-left: auto;
+            font-size: 3rem;
+            color: $gray-dark-color;
+        }
+        &-content{
+            display: none;
+            padding: 2rem;  
+            border: 1px solid $gray-dark-color;
+            border-top: 0; 
+            font-size: 1.5rem;
+            font-family: $secondary-font;
+            font-style: italic;
+            line-height: 1.6;
+            color: $text-color;
+            font-weight: 300;
+        }
+
+        &-text{
+            height: 13rem;
+            padding-right: 2rem;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: 0.6rem;
+              }
+               
+            &::-webkit-scrollbar-track {
+                background-color: $gray-light-color;
+                border-radius: 2rem;
+              }
+               
+            &::-webkit-scrollbar-thumb {
+                background-color: $third-color;
+                border-radius: 2rem;
+              }
+        }
+    }
+
+    &-item.is-active .wedo-item-content{
+        display: block;
+    }
+
+    @include maxWidth(767px){
+        padding-top: 5rem;
+
+        &-container{
+            flex-direction: column;
+        }
+        &-img, &-content{
+            width: 100%;
+        }
+        &-img{
+            margin-bottom: 2rem;
+        }
+    }
+}
+

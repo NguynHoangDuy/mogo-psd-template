@@ -1,0 +1,30 @@
+.device{
+    padding-top: 11rem;
+    background: linear-gradient(#f0f0f0b3), url("../images/img-device-bg.png")
+    no-repeat  center / cover;
+    &-img{
+        max-width: 65rem;
+        position: relative;
+        left: 50%;
+        margin-top: -6rem;
+        transform: translateX(-50%) translateY(9.3rem);
+    }
+    @include maxWidth(767px){
+        padding-top: 5rem;
+        &-img{
+            max-width: 40rem;
+            margin-top: -3rem;
+            transform: translateX(-50%) translateY(5.7rem);
+        }
+    }
+
+    @include maxWidth(413px){
+        padding-top: 5rem;
+        &-img{
+            max-width: 80%;
+            margin-top: -3rem;
+            transform: translateX(-50%) translateY(3.9rem);
+        }
+    }
+
+}

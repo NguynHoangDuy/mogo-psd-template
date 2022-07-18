@@ -1,0 +1,110 @@
+.team{
+    padding: 11rem 0;
+    background-color: #FFF;
+    &-list{
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &-item{
+        margin-bottom: 6rem;
+        width: calc(33.33% - 2rem)
+    }
+    &-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &-info{
+        margin-top: 3rem;
+        text-align: center;
+        min-height: calc(100% - 48rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-name{
+        text-transform: uppercase;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+    &-position{
+        font-size: 1.5rem;
+        font-family: $secondary-font;
+        font-style: italic;
+        color: $text-color;
+    }
+    &-social{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-item{
+            &:not(:first-child){
+                border-left: 1px solid $primary-color;
+            }
+        }
+        &-link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 5rem;
+            height: 5rem;
+            font-size: 2rem;
+            color: $primary-color;
+            background-color: $secondary-color;
+            transition: all 0.25s linear;
+
+            &:hover{
+                color: white;
+                background-color: $primary-color;
+            }
+        }
+    }
+    @include maxWidth(1023px){
+        padding: 7rem 0;
+    }
+
+    @include maxWidth(767px){
+        padding: 5rem 0;
+
+        &-list{
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 80%;
+            grid-template-columns: unset;
+            overflow-x: auto;
+            @include hideScroll();
+            padding: 1rem;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+        }
+        &-item{
+            width: calc(100% - 2rem)
+        }
+        &-name{
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-size: 1.4xrem;
+        }
+        &-position{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@include hoverEffect(".team-main",".team-content");
+
+.brand{
+    padding: 8rem 0;
+    background-color: $gray-light-color;
+    @include maxWidth(1023px){
+        padding: 6rem 0;
+
+    }
+    @include maxWidth(767px){
+        padding: 4rem 0;
+
+    }
+}
